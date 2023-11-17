@@ -1,0 +1,39 @@
+class Task:
+    def __init__(self, description, priority, deadline):
+        self.description = description
+        self.priority = priority
+        self.deadline = deadline
+
+def display_tasks(tasks):
+    for task in tasks:
+        print(f"Description: {task.description}, Priority: {task.priority}, Deadline: {task.deadline}")
+
+def main():
+    tasks = []
+
+    while True:
+        print("1. Add Task")
+        print("2. Display Tasks")
+        print("3. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            description = input("Enter task description: ")
+            priority = input("Enter priority (High, Medium, Low): ")
+            deadline = input("Enter deadline (yyyy-mm-dd): ")
+
+            task = Task(description, priority, deadline)
+            tasks.append(task)
+
+        elif choice == "2":
+            display_tasks(tasks)
+
+        elif choice == "3":
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
